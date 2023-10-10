@@ -1,6 +1,41 @@
 import kotlin.random.Random
 data class Spell(val name: String, val power: Int)
 fun main() {
+    // задание 20.09.23
+    when (readln()) {
+        "rectangle" -> {
+            val a = readln().toDouble()
+            val b = readln().toDouble()
+            println(a*b)
+
+        }
+        "triangle" -> {
+            val a = readln().toDouble()
+            val b = readln().toDouble()
+            val c = readln().toDouble()
+            val res = kotlin.math.sqrt(((a + b + c) / 2 * ((a + b + c) / 2 - a) * ((a + b + c) / 2 - b) * ((a + b + c) / 2 - c)))
+            println(res)
+        }
+        "circle" -> {
+            val a = readln().toDouble()
+            val res = 3.14 * a * a
+            println(res)
+        }
+    }
+
+    // задание 18.09.23 ч2
+    fun <T> getStringsOnly(list: List<T>): List<String> {
+        var result = mutableListOf<String>()
+        for (obj in list) {
+            if (obj is String) result.add(obj)
+        }
+        val resultSec = result.toList()
+        return resultSec
+    }
+    // задание 18.09.23
+    var three = readln().split(" ")
+    var frequenciesByWord = three.groupingBy { it }.eachCount()
+    for (pair in frequenciesByWord) println("${pair.key} ${pair.value}")
     // задание 7
     val listTwo = readln().split(" ")
 
