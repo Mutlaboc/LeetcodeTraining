@@ -1,6 +1,21 @@
 fun main() {
 
+    fun bill(priceList: Map<String, Int>, shoppingList: MutableList<String>): Int {
+        var summ = 0
+        for (item in shoppingList) {
+            summ += priceList[item]?:0
+        }
+        return summ
+    }
 
+    fun main() {
+        val list = readln().split(" ")
+        // write your code here
+        val res = list.reversed()
+
+
+            println(res)
+    }
 
     val lambda: (Long, Long) -> Long = { x, y -> (x..y).reduce { c, z -> c * z } }
 
